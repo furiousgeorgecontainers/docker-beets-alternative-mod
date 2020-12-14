@@ -8,4 +8,6 @@ beets_version=$(beet --version 2>/dev/null | grep ^beets | awk '{print $NF}')
 if version_ge "$required_beets_version" "$beets_version" ; then
   echo "Running furiousgeorge/beets-alternative-mod installation of beets-alternatives"
   pip3 install --no-cache-dir -U beets-alternatives
+else
+  echo "Beets version $beets_version must be at least $required_beets_version"
 fi
